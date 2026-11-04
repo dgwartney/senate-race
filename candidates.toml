@@ -1,0 +1,9 @@
+# Main matchup per race, for races where civicAPI lists extra candidates (primary losers, duplicates)
+# or no Democrat. Each entry is [challenger side, Republican side], using civicAPI's candidate names.
+# Races not listed use the leading Democrat vs the leading Republican. Checked 30 Oct 2026.
+
+[matchups]
+"AK-SEN" = ["Mary Peltola", "Dan Sullivan"]      # three Republicans listed, Sullivan twice
+"CO-SEN" = ["John Hickenlooper", "Mark Baisley"] # three Republicans listed
+"ID-SEN" = ["Todd Achilles", "Jim Risch"]        # Democrat withdrew; independent challenger
+"NE-SEN" = ["Dan Osborn", "Pete Ricketts"]       # no Democrat; independent challenger

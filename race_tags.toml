@@ -1,0 +1,14 @@
+# Race tags shown on the dashboard. Each tag lists race IDs as they appear on the race cards
+# (state code + "-SEN", e.g. GA-SEN). A race can carry several tags. Edit and reload the page.
+
+[tags]
+# Cook Political Report toss-ups, 20 Oct 2026. Whoever wins 4 of these 7 controls the Senate.
+"toss-up" = ["AK-SEN", "IA-SEN", "KS-SEN", "ME-SEN", "MI-SEN", "OH-SEN", "TX-SEN"]
+# Next tier: R targets in open D seats (NH, MN), D reach (SC), D-favoured pickup (NC), independent challenger (NE).
+"watch" = ["NH-SEN", "MN-SEN", "SC-SEN", "NC-SEN", "NE-SEN"]
+
+# Optional: a dashboard tally of which party leads in the races carrying `tag`.
+[control]
+tag = "toss-up"
+dem_needed = 4
+rep_needed = 4

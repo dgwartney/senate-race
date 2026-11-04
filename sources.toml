@@ -1,0 +1,20 @@
+# Preferred results source per state. States not listed use the main provider (civicAPI).
+#
+# source = "official" takes the race totals from the state's own feed (src/officials.py), which
+# must also be switched on in OFFICIAL_FEEDS. The page falls back to civicAPI whenever that feed
+# fails, can't match both candidates, or has no votes yet.
+#
+# expected_turnout is the two-side vote expected when counting finishes. The state feeds don't
+# publish one, so it drives "% reporting" and the odds; set from the last midterm Senate race.
+
+[OH]
+source = "official"
+expected_turnout = 4_100_000  # 2022: Vance 2.19M + Ryan 1.94M
+
+[TX]
+source = "official"
+expected_turnout = 8_000_000  # 2022 governor 8.1M; 2018 Senate 8.3M
+
+[IA]
+source = "official"           # Iowa's feed blocks cloud hosts, so on Fly this falls back to civicAPI
+expected_turnout = 1_200_000  # 2022: Grassley 0.68M + Franken 0.53M

@@ -1,0 +1,9 @@
+# Cloudflare Worker that serves a custom domain by proxying to the Fly app.
+# Set `pattern` to a hostname in a zone your Cloudflare account owns, and ORIGIN in worker.js
+# to your Fly app's hostname. The account comes from `wrangler login` or CLOUDFLARE_ACCOUNT_ID.
+# Deploy: cd deploy/cloudflare && wrangler deploy
+name = "senate-dashboard-proxy"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = false
+routes = [{ pattern = "senate.example.com", custom_domain = true }]

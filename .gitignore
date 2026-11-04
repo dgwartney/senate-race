@@ -1,0 +1,29 @@
+# Python and tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local configuration and secrets
+.env
+.env.*
+
+# Runtime data and database backups
+data/
+backups/
+
+# Local tool state
+.playwright-mcp/
+.wrangler/
+.DS_Store
+
+# Corporate root certificates are machine-specific; export your own (see README)
+certs/*.crt
+
+# Stale 30 Oct generator that overwrites the current code (kept locally only)
+build.py
+
+!.env.example

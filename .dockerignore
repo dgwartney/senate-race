@@ -1,0 +1,13 @@
+.git
+.venv
+__pycache__
+*.pyc
+.env
+.playwright-mcp
+.pytest_cache
+.ruff_cache
+.coverage
+deploy
+data/
+backups/
+build.py

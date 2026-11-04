@@ -1,0 +1,32 @@
+# Fly.io config for the Senate dashboard. Deploy with `fly deploy`.
+app = "senate-race-tracker"
+primary_region = "sjc"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  ELECTION_PROVIDER = "civicapi"
+  # Iowa's results CDN challenges requests from cloud servers (HTTP 202, x-amzn-waf-action: challenge).
+  OFFICIAL_FEEDS = "OH,TX"
+  REFRESH_INTERVAL_SECONDS = "30"
+
+[http_service]
+  internal_port = 8501
+  force_https = true
+  # Keep one machine running: Streamlit sessions live on a single server over a WebSocket,
+  # and a cold start would greet election-night visitors with a delay.
+  auto_stop_machines = "off"
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [[http_service.checks]]
+    grace_period = "20s"
+    interval = "30s"
+    timeout = "5s"
+    method = "GET"
+    path = "/_stcore/health"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "1gb"
